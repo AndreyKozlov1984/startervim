@@ -24,7 +24,7 @@ syntax on
 
 
 " Basic UI 
-set visualbell
+set novisualbell
 set shm=atIWswxrnmlf
 set ruler
 set title
@@ -35,6 +35,7 @@ set laststatus=2
 set statusline=%f
 set showcmd
 set showmode
+set nu
 
 
 "
