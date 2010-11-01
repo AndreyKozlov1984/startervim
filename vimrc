@@ -192,6 +192,12 @@ let g:SuperTabCrMapping = 0
 " --- BUNDLE: http://github.com/tpope/vim-fugitive.git
 set statusline+=%{fugitive#statusline()}
 
+"Buffer
+" --- BUNDLE: http://github.com/vim-scripts/L9.git
+"
+" Your own key-maps. 
+"Buffer
+" --- BUNDLE: http://github.com/vim-scripts/FuzzyFinder.git 
 "
 " Your own key-maps. 
 " 
