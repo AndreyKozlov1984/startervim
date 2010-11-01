@@ -3,6 +3,8 @@
 " Author: frangossauro
 "
 
+filetype off
+call pathogen#runtime_append_all_bundles()
 
 " Fix vim defaults 
 set nocompatible
@@ -19,7 +21,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-colorscheme default 
+colorscheme molokai
 syntax on
 
 
@@ -138,7 +140,6 @@ endif
 
 
 " Enable vim-bundles
-call pathogen#runtime_append_all_bundles()
 
 " Helper command to update bundles
 function! s:UpdateBundles()
