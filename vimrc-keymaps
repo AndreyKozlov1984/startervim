@@ -44,5 +44,5 @@ nmap <leader><leader> :LustyJuggler<cr>
 
 " Omni autocomplete
 " Fuf Finder
-nmap <leader>b :FufBuffer
+nmap <leader>b :FufBuffer<cr>
 
