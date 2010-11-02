@@ -1,4 +1,4 @@
-" 
+"some stupid comment here 
 " Configure vim to suck less
 " Author: frangossauro
 "
@@ -15,7 +15,7 @@ set nostartofline 		        " Make j/k respect the columns (after all, this is n
 set modeline 			        " Respect modeline of the file (the famous "vi:noai:sw=3 ts=6" on the beginning of the files)
 set hidden 			            " Avoid asking to save before hiding
 set enc=utf-8
-setlocal spell spelllang=en_us  " I assume you program in english
+set nospell "I hate that stupid spell checking, it sucks, really!!!"
 
 filetype on
 filetype plugin on
@@ -102,7 +102,7 @@ set formatoptions=qrn1
 "
 " History and backup
 "
-set viminfo='10,:20,\"100,%,n~/.viminfo
+"set viminfo='10,:20,\"100,%,n~/.viminfo
 set history=1000
 set nobackup
 set nowritebackup
@@ -121,21 +121,6 @@ set formatprg=par
 if has("mouse")
 	set mouse=a
 	set mousefocus
-endif
-
-if has("gui_running")
-    colorscheme molokai
-    set cursorline
-	set gfn:Monaco:h10
-	set transp=2
-
-	" Don't show toolbar and scrollbars
-	set go-=T to
-	set guioptions-=L
-	set guioptions-=r
-
-    " Highlight wrong spelling
-    highlight SpellBad term=underline gui=undercurl guisp=Orange
 endif
 
 
@@ -195,11 +180,12 @@ set statusline+=%{fugitive#statusline()}
 "Buffer
 " --- BUNDLE: http://github.com/vim-scripts/L9.git
 "
-" Your own key-maps. 
 "Buffer
 " --- BUNDLE: http://github.com/vim-scripts/FuzzyFinder.git 
 "
-" Your own key-maps. 
+"Buffer
+" --- BUNDLE: http://github.com/vim-ruby/vim-ruby.git
+"
 " 
 source ~/.vimrc-keymaps
 
