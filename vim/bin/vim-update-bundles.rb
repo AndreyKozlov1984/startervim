@@ -41,7 +41,7 @@ def download(dir, url, tag, doc)
     `git clone -q #{url} #{dir}`
   end
 
-  FileUtils.cd(dir) { `git checkout -q #{tag || 'master'}` }
+  FileUtils.cd(dir) { `git pull -q origin #{tag || 'master'}` }
   print_bundle(dir, doc)
 end
 
