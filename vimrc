@@ -200,7 +200,7 @@ let g:speckyWindowType = 2
 " --- BUNDLE: https://github.com/pangloss/vim-javascript.git
 
 "Javascript format
-" --- BUNDLE: git@github.com:ZeusTheTrueGod/vim-format-js.git
+" --- BUNDLE: https://github.com/ZeusTheTrueGod/vim-format-js.git
 
 "Colorscheme
 " --- BUNDLE: https://github.com/vim-scripts/zenesque.vim.git
