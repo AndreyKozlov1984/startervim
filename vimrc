@@ -1,6 +1,5 @@
-"some stupid comment here 
 " Configure vim to suck less
-" Author: frangossauro
+" Author: ZeusTheTrueGod
 "
 
 filetype off
@@ -21,7 +20,6 @@ filetype on
 filetype plugin on
 filetype indent on
 
-colorscheme molokai
 syntax on
 
 
@@ -114,15 +112,6 @@ set noswapfile
 set grepprg=ack
 set grepformat=%f:%l:%m
 
-" Format
-set formatprg=par
-
-" GUI Options
-if has("mouse")
-	set mouse=a
-	set mousefocus
-endif
-
 
 " Enable vim-bundles
 
@@ -132,11 +121,17 @@ function! s:UpdateBundles()
 endfunction
 command! -nargs=? UpdateBundles call s:UpdateBundles()
 
+"Colorscheme
+" --- BUNDLE: https://github.com/godlygeek/csapprox.git
+let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
+colorscheme zenesque
+
+
 " Syntastic 
 " --- BUNDLE: http://github.com/scrooloose/syntastic.git
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
-let g:syntastic_quiet_warnings=1
+let g:syntastic_quiet_warnings=0
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -147,7 +142,7 @@ set statusline+=%*
 
 "
 " Nerd Commenter
-" --- BUNDLE: http://github.com/scrooloose/nerdcommenter.git
+" --- BUNDLEDENY: http://github.com/scrooloose/nerdcommenter.git
 
 " Lusty explorer
 " --- BUNDLE: git://github.com/sjbach/lusty.git
@@ -156,14 +151,14 @@ set statusline+=%*
 " --- BUNDLE: http://github.com/Raimondi/delimitMate.git
 let delimitMate_smart_quotes = 1
 let delimitMate_visual_leader = ""
+let delimitMate_autoclose = 1
 
 " snipMate 
 " --- BUNDLE: http://github.com/msanders/snipmate.vim.git
 
 " SuperTab
-" --- BUNDLE: http://github.com/ervandew/supertab.git
+" --- BUNDLEDENY: http://github.com/ervandew/supertab.git
 let g:SuperTabCrMapping = 0
-
 "
 " Matchit
 " --- BUNDLE: http://github.com/edsono/vim-matchit.git
@@ -187,11 +182,41 @@ set statusline+=%{fugitive#statusline()}
 " --- BUNDLE: http://github.com/vim-ruby/vim-ruby.git
 "
 " 
-source ~/.vimrc-keymaps
+"Buffer
+" --- BUNDLE: http://github.com/vim-scripts/Specky.git
+""
+let g:speckyBannerKey = "<LEADER>sb"
+let g:speckyQuoteSwitherKey = "<LEADER>s'"
+let g:speckyRunRdocKey = "<LEADER>sr"
+let g:speckySpecSwitcherKey = "<LEADER>sx"
+let g:speckyRunSpecKey = "<LEADER>ss"
+let g:speckyRunSpecCmd = "bundle exec rspec "
+let g:speckyRunRdocCmd = "bundle exec ri"
+let g:speckyWindowType = 2
+"Javascript lint
+" --- BUNDLEX: http://github.com/hallettj/jslint.vim.git
+
+"Javascript  indentation
+" --- BUNDLE: https://github.com/pangloss/vim-javascript.git
+
+"Javascript format
+" --- BUNDLE: git@github.com:ZeusTheTrueGod/vim-format-js.git
+
+"Colorscheme
+" --- BUNDLE: https://github.com/vim-scripts/zenesque.vim.git
+
+"Cucumber integration
+" --- BUNDLE: https://github.com/tpope/vim-cucumber.git
+"
+
+" commandT
+" --- BUNDLE: https://github.com/wincent/Command-T.git
+"
 
 "
 " Filetypes
 "
+source ~/.vimrc-keymaps
 if has("autocmd")
 
     " Save on focusLost
@@ -206,4 +231,7 @@ if has("autocmd")
     autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab 
     autocmd FileType json       setlocal ts=2 sts=2 sw=2 noexpandtab 
 
+endif
+if filereadable("vimrc")
+    source vimrc
 endif
