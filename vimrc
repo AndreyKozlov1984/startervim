@@ -142,7 +142,7 @@ set statusline+=%*
 
 "
 " Nerd Commenter
-" --- BUNDLEDENY: http://github.com/scrooloose/nerdcommenter.git
+" --- BUNDLE: http://github.com/scrooloose/nerdcommenter.git
 
 " Lusty explorer
 " --- BUNDLE: git://github.com/sjbach/lusty.git
@@ -214,6 +214,11 @@ let g:speckyWindowType = 2
 "
 
 "
+" --- BUNDLE: https://github.com/kchmck/vim-coffee-script.git
+
+"
+" --- BUNDLE: https://github.com/zeekay/vim-js2coffee.git
+"
 " Filetypes
 "
 source ~/.vimrc-keymaps
@@ -224,12 +229,15 @@ if has("autocmd")
 
     " Recognize 
     autocmd BufRead,BufNewFile *.json set filetype=json
+    autocmd BufRead,BufNewFile *._js set filetype=javascript
     autocmd BufRead,BufNewFile *.less set filetype=less
+    autocmd BufRead,BufNewFile *._coffee set filetype=coffee
 
     autocmd FileType html       setlocal ts=2 sts=2 sw=2 expandtab 
     autocmd FileType css        setlocal ts=2 sts=2 sw=2 expandtab 
-    autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab 
-    autocmd FileType json       setlocal ts=2 sts=2 sw=2 noexpandtab 
+    autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab 
+    autocmd FileType coffee     setlocal ts=2 sts=2 sw=2 expandtab 
+    autocmd FileType json       setlocal ts=2 sts=2 sw=2 expandtab 
 
 endif
 if filereadable("vimrc")
